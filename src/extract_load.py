@@ -26,7 +26,7 @@ def buscar_todos_os_dados(commodities):
     for simbolo in commodities:
         dados = buscar_dados(simbolo)
         todos_os_dados.append(dados)
-    return pd.concat(todos_os_dados)
+    return pd.concat(todos_os_dados)    
 
 def salvar_no_postgres(df, schema='public'):
     df.to_sql('commodities', engine, if_exists= 'append', index=True, index_label='Date', schema=schema)
